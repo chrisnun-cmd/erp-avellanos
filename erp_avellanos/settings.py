@@ -1,8 +1,8 @@
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-erp-avellanos-2025'
-DEBUG = False  # ← ¡Importante en producción!
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+SECRET_KEY = 'django-insecure-tu-clave-secreta-aqui'
+DEBUG = True
+ALLOWED_HOSTS = ['chrisnun.pythonanywhere.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
