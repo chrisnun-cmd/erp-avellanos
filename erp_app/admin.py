@@ -101,9 +101,7 @@ class CustomAdminSite(admin.AdminSite):
     index_title = "Dashboard Operativo"
 
     def index(self, request, extra_context=None):
-        from django.db.models import Q
         from datetime import timedelta
-
         hoy = timezone.now().date()
         proximos_7_dias = hoy + timedelta(days=7)
 
@@ -126,7 +124,7 @@ class CustomAdminSite(admin.AdminSite):
 # Reemplazar el admin por defecto
 custom_admin_site = CustomAdminSite(name='custom_admin')
 
-# Registrar todos los modelos en el admin personalizado
+# Registrar todos los modelos
 custom_admin_site.register(Cliente, ClienteAdmin)
 custom_admin_site.register(Proveedor, ProveedorAdmin)
 custom_admin_site.register(MateriaPrima, MateriaPrimaAdmin)
