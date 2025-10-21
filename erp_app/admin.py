@@ -8,12 +8,10 @@ from .models import (
     DocumentacionExportacion, Cotizacion
 )
 
-# === Personalización del Admin ===
 admin.site.site_header = "ERP Sociedad Comercial Los Avellanos Spa"
 admin.site.site_title = "ERP Avellanos"
-admin.site.index_title = "Dashboard Operativo"
+admin.site.index_title = "Panel de Administración"
 
-# === Inlines ===
 class CostoMaquilaInline(admin.TabularInline):
     model = CostoMaquila
     extra = 1
@@ -27,7 +25,6 @@ class ServicioLogisticoInline(admin.TabularInline):
     model = ServicioLogistico
     extra = 1
 
-# === Registro de modelos ===
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'pais', 'email', 'telefono')
