@@ -1,8 +1,8 @@
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-erp-avellanos-2025'
-DEBUG = True
-ALLOWED_HOSTS = ['chrisnun.pythonanywhere.com', '127.0.0.1', 'localhost']
+DEBUG = False  # ← ¡Importante en producción!
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,7 +29,7 @@ ROOT_URLCONF = 'erp_avellanos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'erp_app/templates'],  # ← clave para el dashboard
+        'DIRS': [BASE_DIR / 'erp_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
